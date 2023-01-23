@@ -1,0 +1,164 @@
+:root {
+    --bg-D: #282828;
+    --fg-D: #ebdbb2;
+    --red-D: #cc241d;
+    --orange-D: #d65d0e;
+    --yellow-D: #d79921;
+    --green-D: #98971a;
+    --aqua-D: #689d6a;
+    --blue-D: #458588;
+    --purple-D: #b16286;
+    --bg-L: #fbf1c7;
+    --fg-L: #3c3836;
+    --red-L: #9d0006;
+    --orange-L: #af3a03;
+    --yellow-L: #b57614;
+    --green-L: #79740e;
+    --aqua-L: #427b58;
+    --blue-L: #076678;
+    --purple-L: #8f3f71;
+}
+
+body {
+    font-family: monospace;
+    color: var(--fg-D);
+    background-color: var(--bg-D);
+    min-height: 100vh;
+    margin: 0;
+    border-bottom-color: var(--blue-D);
+}
+
+a {
+    color: var(--blue-D);
+}
+
+a:visited {
+    color: var(--purple-D);
+}
+
+main {
+    counter-reset: reversed(article);
+    margin: auto;
+    min-width: 300px;
+    width: 100%;
+    max-width: 640px;
+}
+
+.wrapper {
+    gap: 12px;
+}
+
+.wrapper.main {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: 1fr;
+}
+
+.wrapper.content {
+    display: flex;
+    flex-direction: column;
+}
+
+#profile .user-image {
+    display: block;
+    aspect-ratio: 1;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+article {
+    margin-left: 1.5rem;
+    counter-increment: article -1;
+}
+
+article+article {
+    margin-top: 4rem;
+}
+
+h1,
+.horizontal-divider {
+    border-bottom: 1pt solid;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+main>h1 {
+    font-size: 1.75rem;
+}
+
+article>h1 {
+    font-size: 1.15rem;
+}
+
+article>h1::before {
+    content: '00' counter(article) '. ';
+}
+
+article>h1:nth-child(n+10):before {
+    content: '0' counter(article) '. ';
+}
+
+article>h1:nth-child(n+100):before {
+    content: counter(article) '. ';
+}
+
+p {
+    text-indent: 1.5rem;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+footer * {
+    float: right;
+}
+
+@media screen and (max-width: 639px) {
+    .wrapper {
+        gap: 0px;
+    }
+
+    .wrapper.main {
+        grid-template-rows: 180px 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    #profile .user-image {
+        float: left;
+        margin-right: 12px;
+        height: 100%;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    body {
+        margin-right: 12px;
+    }
+
+    article {
+        margin-left: 0;
+    }
+
+    .wrapper.main {
+        grid-template-rows: 240px 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    #profile .user-image {
+        float: initial;
+        margin-bottom: 12px;
+        height: 180px;
+    }
+
+    h1 {
+        max-width: 240px;
+    }
+
+    p {
+        text-indent: 0;
+    }
+}
