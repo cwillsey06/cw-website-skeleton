@@ -1,6 +1,6 @@
-# website-skeleton
+# cw-website-skeleton
 
-Visit my website that actually *uses* this template!: [cwillsey.neocities.org](https://cwillsey.neocities.org)
+Visit my website that actually *uses* this template!: [mao06.neocities.org](https://mao06.neocities.org)
 
 ## Features
 * No JavaScript
@@ -12,4 +12,4 @@ Visit my website that actually *uses* this template!: [cwillsey.neocities.org](h
 
 ## Credits
 * [Gruvbox](https://github.com/morhetz/gruvbox): Retro groove color scheme for Vim
-* kai's beautiful [website](https://synthun.neocities.org/)
+* kai's beautiful [synthun.neocities.org](https://synthun.neocities.org)
